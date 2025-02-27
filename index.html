@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--    容器 box 高度100vh flex排版方向column 水平置中 不要垂直置中-->
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /*容器樣式 背景顏色 #bdaa90*/
+            background-color: #bdaa90;
+
+        }
+
+        .title {
+            width: 300px;
+            /*標題 box 寬度80% 上方間距 2em*/
+            margin-top: 2em;
+            /*水平置中 不要垂直置中*/
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        /*文字 box 寬度100%*/
+        .cat-img {
+            width: 200%;
+            /*文字 box 文字置中*/
+            text-align: center;
+        }
+        .cat-img {
+            /*80px -webkit-text-stroke 3px 黑色*/
+            font-size: 75px;
+            -webkit-text-stroke: 2px black;
+            /*文字白色*/
+            color: white;
+
+
+        }
+        /*文字 div 背景圖片 用 id 設定imgs/p.png 圖片靠下 填滿容器contain 不重複*/
+        #p {
+            background-image: url('imgs/p.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+        /*body box 編距為0*/
+        body {
+            margin: 0;
+        }
+        /*文字 div 排版填滿剩餘空間*/
+        .cat-img {
+            flex: 1;
+        }
+        /*字型 sans-serif*/
+        body {
+            font-family: sans-serif;
+        }
+        /*防止文字被選取*/
+        .cat-img {
+            user-select: none;
+        }
+        /*標題 box 最大寬度 600px*/
+        .title {
+            max-width: 600px;
+        }
+        /*文字 box 最大寬度 800px*/
+        .cat-img {
+            max-width: 800px;
+        }
+        /*新增文字 div 背景圖片 用 id 設定 imgs/op.png*/
+        #p {
+            background-image: url('imgs/op.png');
+        }
+
+    </style>
+
+
     <meta charset="UTF-8">
     <title>POPCAT CLASSIC</title>
 </head>
 <body>
+<!--新增容器去包裹標題圖片與點擊數-->
+<div class="container">
     <img class="title" src="imgs/popcat.svg" alt="POPCAT">
     <div class="cat-img" id="p">0</div>
+</div>
+
+
 </body>
 </html>
